@@ -32,7 +32,8 @@
         function mostrarDimensiones() {
             const width = window.innerWidth;
             const height = window.innerHeight;
-            document.getElementById('dimension').textContent = `Ancho: ${width}px, Alto: ${height}px`;
+            const ratio = window.devicePixelRatio;
+            document.getElementById('dimension').textContent = `Ancho: ${width}px, Alto: ${height}px, Pixel Ratio: ${ratio}`;
         }
 
         mostrarDimensiones();
