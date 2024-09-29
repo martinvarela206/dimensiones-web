@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimensiones de la Página</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #dimension {
+            font-size: 24px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p>Considerar que el dispositivo o el navegador pueden estar escalados.</p>
+    <p>Por ejemplo: Un monitor de 1920x1080 escalado en Windows a 125% da como ancho 1536px.</p>
+    <p>Si a ese mismo dispositivo se le hace un zoom out de 80%, vuelve a dar 1920px.</p>
+    <div id="dimension"></div>
+    <script>
+        function mostrarDimensiones() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            document.getElementById('dimension').textContent = `Ancho: ${width}px, Alto: ${height}px`;
+        }
+
+        mostrarDimensiones();
+        window.addEventListener('resize', mostrarDimensiones);
+    </script>
+</body>
+</html>
